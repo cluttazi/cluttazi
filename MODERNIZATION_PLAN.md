@@ -39,8 +39,35 @@ Small audit of this GitHub profile README repo (`README.md` + `LICENSE` only).
 ## Checklist
 
 - [x] Phase 1: audit + this plan
-- [ ] Phase 2: fix trailing whitespace + stray blank line in README.md
+- [x] Phase 2: fix trailing whitespace + stray blank line in README.md
       (no content/tone changes)
-- [ ] Phase 3: minimal markdownlint CI (`.github/workflows/ci.yml` +
+- [x] Phase 3: minimal markdownlint CI (`.github/workflows/ci.yml` +
       permissive `.markdownlint-cli2.jsonc`), verified locally with Node 22
-- [ ] Finish: update this file with Done vs Deferred, push branch
+- [x] Finish: update this file with Done vs Deferred, push branch
+
+## Done vs Deferred
+
+### Done
+
+- Audit of README.md and LICENSE (this document).
+- README whitespace fixes: removed a trailing space and a stray blank line
+  that split the Tech Stack list. Content, wording, and tone untouched.
+- Minimal CI: `.github/workflows/ci.yml` runs `npx --yes markdownlint-cli2`
+  on Node 22; `.markdownlint-cli2.jsonc` disables only MD013 (line length)
+  and MD041 (first-line heading). Verified locally: 0 issues in 2 files.
+
+### Deferred
+
+- Badge logo slugs (`CSS3`, `microsoft-sql-server`, `visual-studio-code`)
+  reference Simple Icons that were renamed/removed. Rendering depends on
+  shields.io alias behavior that couldn't be verified offline — left as-is;
+  owner can swap slugs if a logo stops showing.
+- LICENSE copyright year update — optional, owner's call.
+- `.gitignore` — not useful for a two-file docs repo.
+
+## Summary (PR-style)
+
+Modernizes the profile README repo with a light touch: adds this audit
+plan, fixes two markdown whitespace nits in `README.md` (no content
+changes), and adds a tiny markdownlint CI workflow with a permissive
+config that passes against the current files.
